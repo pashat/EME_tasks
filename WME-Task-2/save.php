@@ -6,10 +6,9 @@
 
 <body>
 <?php include("navi.php"); ?>
-<div id="content">
+<div>
     <?php
     require 'world_data_parser.php';
-    include("ipsum.php");
     include ("showhide.php");
     $wdp = new WorldDataParser();
     $csv = $wdp -> parseCSV('world_data.csv');
