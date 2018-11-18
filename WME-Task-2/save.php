@@ -13,7 +13,7 @@
     $wdp = new WorldDataParser();
     $csv = $wdp -> parseCSV('world_data.csv');
     if ($wdp -> saveXML($csv)==true){
-        echo '<h1>Data was successfully saved as "world_data.xml" =)</h1>';
+        echo '<h1>Data successfully saved as "world_data.xml"</h1>';
     }else echo '<h1>Data was not saved =(</h1>';
 
     include("footer.php");
@@ -21,4 +21,3 @@
 </div>
 </body>
 </html>
-

@@ -11,24 +11,21 @@ class WorldDataParser
     {
         try {
             // go through first array and collect tags
-            $xml_tags_array = array();
+            $xml_tag = array();
             foreach ($array[0] as $line) {
                 $tag = str_replace(' ', '_', trim($line));
-                $xml_tags_array[] = $tag;
+                $xml_tag[] = $tag;
             }
             $xml = new DOMDocument("1.0", "UTF-8");
-            $xml->preserveWhiteSpace = false;
-            $xml->formatOutput = true;
             $xml_countries = $xml->createElement('Countries');
-            // go through remaining array in array, create xml from every entry.
-            foreach ($array as $entry_nr => $entry) {
-                if ($entry_nr) {
+            // go through remaining array and get the content of the array
+            foreach ($array as $col_nr => $content) {
+                if ($col_nr) {
                     $xml_country = $xml->createElement("Country");
-                    foreach ($entry as $index => $value) {
-                        $value = trim($value);
-                        $xele = $xml->createElement($xml_tags_array[$index]);
-                        $xele->nodeValue = $value;
-                        $xml_country->appendChild($xele);
+                    foreach ($content as $index => $value) {
+                        $table_ele = $xml->createElement($xml_tag[$index]);
+                        $table_ele->nodeValue = $value;
+                        $xml_country->appendChild($table_ele);
                     }
                     $xml_countries->appendChild($xml_country);
                 }
@@ -40,15 +37,17 @@ class WorldDataParser
             return false;
         }
     }
+
+    // import the xsl and xml file and transfoorm it to the new html table
     function printXML($xml_link, $xsl_link)
     {
         $xsl = new DOMDocument("1.0", "UTF-8");
         $xsl->load($xsl_link);
         $xml = new DOMDocument("1.0", "UTF-8");
         $xml->load($xml_link);
-        $procxml = new XSLTProcessor();
-        $procxml->importStylesheet($xsl);
-        $procxml = $procxml->transformToXML($xml);
-        return $procxml;
+        $proc = new XSLTProcessor();
+        $proc->importStylesheet($xsl);
+        $proc = $proc->transformToXML($xml);
+        return $proc;
     }
 }
