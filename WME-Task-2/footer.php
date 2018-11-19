@@ -4,6 +4,6 @@
         <span style="float: right">This solution has been created by:</span>
     </p>
     <br>
-    <span style="float: left">First course exercise <strong>HTML,CSS and JS</strong> of the lecture Web and Multimedia Engineering</span>
+    <span style="float: left">Second course exercise <strong>XML und PHP</strong> of the lecture Web and Multimedia Engineering</span>
     <span style="float: right">Team 16</span>
 </div>

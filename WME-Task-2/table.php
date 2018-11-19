@@ -5,7 +5,7 @@
             <a href="javascript:void(0)" onclick="sortTableZyx()"><i class="fa fa-angle-down"></i></a>
         </th>
         <th title="Field #3">birth rate/1000</th>
-        <th title="Field #4">cell phones/1000</th>
+        <th title="Field #4">cell phones/100</th>
         <th title="Field #5">children/women</th>
         <th title="Field #6">electric usage</th>
         <th title="Field #7">internet usage</th>

@@ -6,7 +6,7 @@
 
 <body>
 <?php include("navi.php"); ?>
-<div>
+<div class="container">
     <?php
     include("ipsum.php");
     include ("showhide.php");

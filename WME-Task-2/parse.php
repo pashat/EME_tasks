@@ -6,8 +6,11 @@
 
 <body>
 <?php include("navi.php"); ?>
-<div>
+<div class="container">
     <?php
+    /**
+     * implementation of the parse of csv_file: world_data.csv to an array with showing of them
+     */
     include ("showhide.php");
     require 'world_data_parser.php';
     $wdp = new WorldDataParser();

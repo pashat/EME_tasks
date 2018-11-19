@@ -6,8 +6,11 @@
 
 <body>
 <?php include("navi.php"); ?>
-<div>
+<div class="container">
     <?php
+    /**
+     * implementation of saving of world_data.xml
+     */
     require 'world_data_parser.php';
     include ("showhide.php");
     $wdp = new WorldDataParser();
